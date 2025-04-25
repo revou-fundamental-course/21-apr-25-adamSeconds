@@ -10,15 +10,94 @@
 <body>
     <!-- header -->
     <header>
-
+          <h1> 🌡️ Website Konversi Suhu</h1> 
     </header>
+
     <!-- Main Content -->
     <main>
+        <!-- Introduction -->
+        <section class="section-content">
+            <p class="about">Ubah Celsius ke Fahrenheit atau sebaliknya dengan sekali klik. Mulai sekarang!</p>        
+        </section>
 
+        <!-- form konversi suhu -->
+         <form action="" class="section-content">
+            <div class="section-item">
+                <label for="konversi-input" class="section-item">Celcius (&deg;C):</label>
+            </div>
+
+            <div class="section-item">
+                <textarea name="" id="konversi-input"></textarea>
+            </div>
+
+            <!-- konversi action -->
+            <div class="section-item">
+                <button id="bg-1">Konversi</button>
+                <button id="bg-2">Reset</button>
+                <button id="bg-3">Reverse</button>
+            </div>
+
+         </form>
+
+         <!-- Hasil konversi suhu -->
+        <section class="section-content">
+
+            <div class="section-item">
+                <label for="result-input">Fahrenheit (&deg;F):</label>
+            </div>
+
+            <div class="section-item">
+                <textarea name="" id="result-input" readonly></textarea>
+            </div>
+
+        </section>
+
+
+        <!-- Penjelasan -->
+        <section class="section-content">
+
+            <div class="section-item">
+                <label for="calculate-detail">Cara Kalkulasi:</label>
+            </div>
+
+            <div class="section-item">
+                <textarea name="" id="result-input" readonly></textarea>
+            </div>
+
+        </section>
+
+        <!-- informasi  Tambahan -->
+         <section class="section-content">
+            <header>
+                <h1>Cara Konversi Celcius (&deg;C) ke Fahrenheit (&deg;F)</h1>
+            </header>
+            <hr>
+
+            <article>
+                <!-- konten informasi -->
+                <p>Suhu <span class="citation">S</span> dalam derajat Fahrenheit (&deg;F) sama dengan suhu <span class="citation">S</span> dalam derajat Celsius (&deg;C) dikali <span class="citation">9/5</span>, kemudian ditambah <span class="citation">32</span></p>
+
+                <!-- Formula -->
+                <div class="citation">
+                    <span class="citation">S</span> <sub>(&deg;F)</sub> = (<span class="citation">S</span> <sub>(&deg;C)</sub> x 9/5) + 32 
+                </div>
+
+                <div class="atau">
+                    atau
+                </div>
+
+                <!-- Fahrenheit to celcius -->
+                <div class="citation">
+                    <span class="citation">S</span> <sub>(&deg;F)</sub> = (<span class="citation">S</span> <sub>(&deg;C)</sub> x 1.8) + 32 
+                </div>
+            </article>
+         </section>
     </main>
-    <!-- Footer -->
-    <footer>
 
+
+    <!-- Footer -->
+    <footer style="text-align: center;">
+        <p style="text-align: center;">&copy; 2025 Damz.</p>
     </footer>
 </body>
 </html>
