@@ -31,13 +31,28 @@ button{
     color: #f8f8f8;
 }
 
+#bg-1:hover{
+    background-color: #1f5f89;
+    color: #f8f8f8;
+}
+
 #bg-2{
     background-color: #95a5a6;
     color: #f8f8f8;
 }
 
+#bg-2:hover{
+    background-color: #585f5f;
+    color: #f8f8f8;
+}
+
 #bg-3{
     background-color: #2ecc71;
+    color: #f8f8f8;
+}
+
+#bg-3:hover{
+    background-color: #18743e;
     color: #f8f8f8;
 }
 
@@ -65,9 +80,9 @@ button{
     font-style: italic;
 }
 
-textarea{
+input{
     width: 100%;
-    height: 150px;
+    height: 50px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -76,6 +91,7 @@ textarea{
     font-size: 16px;
     resize: none;
 }
+
 
 
 
