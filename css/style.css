@@ -2,6 +2,7 @@ body{
     padding: 32px;
     text-align: center;
     font-family: 'Quicksand', sans-serif;
+    background-color: #F5EEDC;
 }
 
 .about{
@@ -13,11 +14,6 @@ p,div{
     text-align: justify;
 }
 
-
-
-.form-group{
-
-}
 
 button{
     border: none;
@@ -57,10 +53,6 @@ button{
 }
 
 
-.form-item{
-    
-}
-
 .section-item{
     font-weight: bold;
     margin-bottom: 8px;
@@ -92,6 +84,9 @@ input{
     resize: none;
 }
 
+footer{
+    margin-top: 100px;
+}
 
 
 

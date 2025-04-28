@@ -5,36 +5,67 @@ const convertBtn = document.getElementById('bg-1');
 const resetBtn = document.getElementById("bg-2");
 const reverseBtn = document.getElementById('bg-3');
 
+let isReversed = false; //Status arah konversi
+let celciusLabel = document.querySelector('label[for="konversi-input"]');
+let fahrenheitLabel = document.querySelector('label[for="result-input"]');
+
+
 function konversi(){
-    const celcius = parseFloat(konversiinput.value);
-    if(isNaN(celcius)){
+    const nilaiInput = parseFloat(konversiinput.value);
+    if(isNaN(nilaiInput)){
         alert("masukkan angka yang valid!")
         return;
     }
-    // hitung konversi
-    const fahrenheit = (celcius * 9/5 + 32).toFixed(2);
-    resultinput.value = fahrenheit;
+    if(isReversed){
+        //konversi Fahrenheit ke Celcius
+        const celcius = ((nilaiInput - 32)*5/9).toFixed(2);
+        resultinput.value = celcius;
+        
+        //Cara Penyelesaian Fahrenheit ke Celcius
+        textkalkulasi.value = `Untuk mengubah ${nilaiInput}°F ke Celcius, kurangi ${nilaiInput}°F dengan 32 (hasilnya ${(nilaiInput - 32).toFixed(2)}°F), lalu kalikan 5/9. Hasil akhirnya adalah ${nilaiInput}°C`
+    }else{
+        //konversi Celcius ke fahrenheit 
+        const fahrenheit = (nilaiInput * 9/5 + 32).toFixed(2);
+        resultinput.value = fahrenheit;
 
-    // cara penyelesaian
-    textkalkulasi.value = `Untuk mengubah ${celcius} °C ke fahrenheit, kalikan ${celcius} °C dengan 9/5 (hasilnya ${(celcius * 9/5).toFixed(2)}°C), lalu tambahkan 32. Hasil akhirnya adalah ${fahrenheit}°F`;
-    // "Untuk mengubah 12°C ke Fahrenheit, kalikan 12 dengan 9/5 (hasilnya 21.6), lalu tambahkan 32. Hasil akhirnya adalah 53.6°F."
+        //Cara Penyelesaian Celcius ke fahrenheit
+        textkalkulasi.value = `Untuk mengubah ${nilaiInput}°C ke Fahrenheit, kalikan ${nilaiInput}°C dengan 9/5 (hasilnya ${(nilaiInput * 9/5).toFixed(2)}°C), lalu tambahkan 32. Hasil akhirnya adalah ${nilaiInput}°F`;
+    }
 }
 
+function tukarLabel(){
+    isReversed = !isReversed;
 
-convertBtn.addEventListener('click',konversi);
-
-konversiinput.addEventListener('keyup',function(e){
-    if(e.key ==='Enter'){
-        konversi();
+    //menukar label
+    if(isReversed){
+        celciusLabel.innerHTML = 'Fahrenheit (°F):';
+        fahrenheitLabel.innerHTML = 'Celcius (°C):';
+    }else{
+        celciusLabel.innerHTML = 'Celcius (°C):';
+        fahrenheitLabel.innerHTML = 'Fahrenheit (°F):';
     }
-});
 
-function resetFields() {
+    // kosongkan konversi input
+    fungsiReset();
+    
+}
+
+function fungsiReset() {
     konversiinput.value = '';
     resultinput.value = '';
     textkalkulasi.value ='';
     konversiinput.focus();
 }
 
-resetBtn.addEventListener('click',resetFields);
+// EventListener
+convertBtn.addEventListener('click',konversi);
+reverseBtn.addEventListener('click',tukarLabel);
+resetBtn.addEventListener('click',fungsiReset);
+
+
+konversiinput.addEventListener('keyup',function(e){
+    if(e.key ==='Enter'){
+        konversi();
+    }
+});
 
